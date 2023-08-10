@@ -1,0 +1,117 @@
+
+/* Custom card styles */
+.card {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-right: 900px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* Custom button styles */
+.create-employee-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 620px;
+  margin-top: 0px;
+}
+
+.create-employee-button:hover {
+  background-color: #0056b3;
+}
+
+.back-button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #b03038;
+}
+
+/* Container styles */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.row {
+  flex-basis: calc(25% - 20px);
+  margin-bottom: 20px;
+}
+
+.create-employee-button1 {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 50px;
+  
+  
+}
+
+.create-employee-button:hover {
+  background-color: #0056b3;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  margin-left: 38%;
+  
+}
+
+.search-bar input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 35%;
+  box-shadow: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+

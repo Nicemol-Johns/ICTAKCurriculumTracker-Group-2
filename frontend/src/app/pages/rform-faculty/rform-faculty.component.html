@@ -1,0 +1,29 @@
+<div class="search-bar">
+  <input type="text" [(ngModel)]="searchText" placeholder="Search ">
+</div>
+
+
+<div class="container mt-5 px-2">
+    <div class="row">
+     <div class="col-3" *ngFor="let form of list | search:searchText">
+      <div class="card mb-4" style="width: 18rem;">
+      <a routerLink="/faculty-dashboard/curriculum-create" style="text-decoration:none">
+          
+            <div class="card-body" (click)="getRequirementFormById(form._id,form.requirementName)">
+              <h5 class="card-title text-center">Requirement: {{form.requirementName}}</h5>
+              <h6 class="card-text">Training Area: {{form.trainingArea}}</h6>
+              <h6 class="card-text">Institution/Corporate office: {{form.institution}}</h6>
+              <h6 class="card-text">Category: {{form.category}}</h6>
+              <h6 class="card-text">No. of hours of training:{{form.trainingHours}}</h6>
+            </div>
+        </a>
+        <span class="icon"><h6 *ngIf="form.referenceLink"><a [href]="form.referenceLink"><i class="bi bi-filetype-pdf" style="font-size:1.5rem; color:dodgerblue" ></i></a></h6></span>
+      </div>
+      </div>
+    </div>
+</div>
+
+ 
+
+ 
+ 

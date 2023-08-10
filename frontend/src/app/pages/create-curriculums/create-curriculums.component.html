@@ -1,0 +1,54 @@
+<!--Faculty Dashboard : post curriculums -->
+<div class="row">
+  <div class="col-lg-9">
+    <div class="create-curriculum">
+      <ul class="nav nav-tabs">
+          <li class="nav-link" routerLink="/faculty-dashboard/Rformfaculty">
+            <span><i class="bi bi-arrow-left-circle"></i></span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/faculty-dashboard/curriculum-create/requirements" routerLinkActive="active">Requirements</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/faculty-dashboard/curriculum-create/details" routerLinkActive="active">Details</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/faculty-dashboard/curriculum-create/references" routerLinkActive="active">References</a>
+          </li> -->
+          <!-- <li class="nav-item">
+            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          </li> -->
+        </ul>
+  </div>
+  <div >
+    <router-outlet></router-outlet>
+  </div>
+  </div>
+  
+  <div class="col-lg-3">
+    <div class="accordion accordion-flush" id="Chats">
+      <div class="accordion-item bg-primary-subtle">
+        <h2 class="accordion-header ">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="border:none; border-radius: 10px; background-color: rgba(0, 102, 255, 0.579);">
+            <i class="bi bi-chat-dots-fill" style="font-size: 2rem; color: white;"></i><span> {{username_chat}}</span>
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#Chats">
+          <div class="accordion-body" style="height: 500px; overflow: auto;">
+            <form id="form" #ChatForm="ngForm" (ngSubmit)="onSubmit()">
+              <input id="input" name="message" [(ngModel)]="message" ><button type="submit">Send</button>
+            </form>
+            <button style="background-color: transparent;border:none;" (click)="reload()"><i class="bi bi-arrow-clockwise"></i></button>
+            <div *ngFor = "let chat of messages"  >
+              <div [ngClass]="isSentMessage(chat.sender) ? 'label-faculty' : 'label-admin' " class="talk-bubble  border ">
+                  <label> {{chat.sender}} <br> {{chat.content}} <br> {{chat.timestamp | date: 'hh:mm dd-MM-yyyy' }}</label>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

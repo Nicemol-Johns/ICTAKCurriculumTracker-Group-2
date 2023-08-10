@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-start m-3">
+  <button class="btn" ><i class="bi bi-arrow-left-circle" style="font-size: 2rem; color: cornflowerblue;" routerLink="/dashboard/requirement-list"></i> </button>
+</div>
+
+<h2 class="text-primary mt-2">Add Requirements of Curriculum</h2>
+<br>
+<form [formGroup]="Rform" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="requirementName">Name of Requirement:</label>
+    <input type="text" id="requirementName" name="requirementName" formControlName="requirementName">
+  </div>
+
+  <div>
+    <label for="trainingArea">Area where training is required:</label>
+    <select id="trainingArea" name="trainingArea" formControlName="trainingArea">
+      <option value="FSD">FSD</option>
+      <option value="ML-AI">ML-AI</option>
+      <option value="DSA">DSA</option>
+      <option value="RPA">RPA</option>
+      <option value="ST">ST</option>
+      <option value="CSA">CSA</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="institution">Institution/Corporate office:</label>
+    <input type="text" id="institution" name="institution" formControlName="institution">
+  </div>
+
+  <div>
+    <label for="category">Category of Requirement:</label>
+    <select id="category" name="category" formControlName="category">
+      <option value="Retail">Retail</option>
+      <option value="Academic">Academic</option>
+      <option value="Corporate">Corporate</option>
+      <option value="Govt">Govt</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="trainingHours">No. of hours of training:</label>
+    <input type="number" id="trainingHours" name="trainingHours" formControlName="trainingHours">
+  </div>
+
+  <div>
+    <label for="trainingHours">Upload Files:</label>
+    <input type="file" #fileInput multiple (change)="handleFileSelect(fileInput)" name="files" formControlName="files">
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+<router-outlet></router-outlet>

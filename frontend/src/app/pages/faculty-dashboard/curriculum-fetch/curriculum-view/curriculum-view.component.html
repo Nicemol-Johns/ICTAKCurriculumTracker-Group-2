@@ -1,0 +1,119 @@
+<div class="d-flex justify-content-between">
+    <button class="btn" ><i class="bi bi-arrow-left-circle" style="font-size: 2rem; color: cornflowerblue;" routerLink="/faculty-dashboard/curriculum-fetch"></i> </button>
+  </div>
+  <div class="d-flex justify-content-end">
+    <button  class="btn btn-primary mr-5" (click)="Edit()" [disabled]="data.approvedStatus" >Edit</button>
+    <button  class="btn btn-primary mr-5" (click)="Save()" [disabled]="!isEditing">Save</button>
+  </div>
+  <div class="row">
+  <!--First Column-->
+      <div class="page container-fluid col-lg-6 col-md text-justify">
+        <form #editForm = "ngForm">
+          <div class="form-group">
+            <label for="Requirement" class="text-lg-start">Requirement:</label>
+            <input type="text" class="form-control" id="Requirement" required  disabled value="{{data.requirementName}}" name="requirement" [(ngModel)]=data.requirementName>
+          </div>       
+          <div class="form-group">
+            <label for="Area" class="text-lg-start">Area of Training:</label>
+            <input type="text" class="form-control" id="Area" required   disabled value="{{data.trainingArea}}" name="trainingArea" [(ngModel)]=data.trainingArea>
+          </div>       
+          <div class="form-group">
+            <label for="Institution" class="text-lg-start">Institution/Corporate office</label>
+            <input type="text" class="form-control" id="Institution" required  disabled value="{{data.institution}}" name="institution" [(ngModel)]=data.institution>
+          </div>       
+          <div class="form-group">
+            <label for="Category" class="text-lg-start">Category:</label>
+            <input type="text" class="form-control" id="Category" required   disabled value="{{data.category}}" name="category" [(ngModel)]=data.category>
+          </div>       
+          <div class="form-group">
+            <label for="Hours" class="text-lg-start">Training Hours</label>
+            <input type="text" class="form-control" id="Hours" required   disabled value="{{data.trainingHours}}" name="trainingHours" [(ngModel)]=data.trainingHours>
+          </div>       
+          <div class="form-group">
+            <label for="s_no" class="text-lg-start">Curriculum S.No</label>
+            <input type="text" class="form-control" id="s_no" required  [disabled]="!isEditing" value="{{data.s_no}}" name="s_no" [(ngModel)]=data.s_no>
+          </div>       
+          <div class="form-group">
+            <label for="facultyname" class="text-lg-start">Faculty Name</label>
+            <input type="text" class="form-control" id="facultyname" required [disabled]="!isEditing" value="{{data.name}}" name="name" [(ngModel)]=data.name>
+          </div>       
+        </form>
+      </div>
+    <!--Second Column-->
+      <div class="page container-fluid col-lg-6 col-md text-justify">
+        <label for="">Click here:</label><br>
+        <button class="btn btn-outline-primary mr-3" data-bs-toggle="modal" data-bs-target="#reg-modal">Description</button>
+            
+            <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title"  aria-hidded="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                    
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Description</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+
+                      <div class="modal-body">
+                        <textarea class="form-control" id="description" [disabled]="!changeText" rows="8" name="description" [(ngModel)]="data.description"></textarea>
+                      </div>
+
+                      <div class="modal-footer d-flex justify-content-between">
+                        <button type="button" (click)="EditText()" class="btn btn-primary">Edit</button> 
+                        <button type="button" (click)="SaveText()"class="btn btn-primary">Save changes</button>
+                      </div>
+                  </div>
+               </div>
+            </div>
+
+
+            <!-- <label for="">Click here to view the description:</label><br> -->
+            <button class="btn btn-outline-primary" [disabled]="!isReferenceLinkAvailable" data-bs-toggle="modal" data-bs-target="#ref-modal">References</button>
+            <div class="modal fade" id="ref-modal" tabindex="-1" aria-labelledby="modal-title"  aria-hidded="true">
+              <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                  
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">References</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                      <iframe [src]="formURL(data.referenceLinkID)" width="100%" height="600px" style="border:0;"></iframe>
+                    </div>
+                </div>
+             </div>
+          </div>
+
+  
+      </div>
+  
+  </div>
+
+  <div class="col-lg-3" style="position:fixed;bottom:0;right:5px">
+    <div class="accordion accordion-flush" id="Chats">
+      <div class="accordion-item bg-primary-subtle">
+        <h2 class="accordion-header ">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne" style="border:none; border-radius: 10px; background-color: rgba(0, 102, 255, 0.579);">
+            <i class="bi bi-chat-dots-fill" style="font-size: 2rem; color: white;"></i><span> {{username_chat}}</span>
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#Chats">
+          <div class="accordion-body" style="height: 500px; overflow: auto;">
+            <form id="form" #ChatForm="ngForm" (ngSubmit)="onSubmit()">
+              <input id="input" name="message" [(ngModel)]="message" ><button type="submit">Send</button>
+            </form>
+            <button style="background-color: transparent;border:none;" (click)="reload()"><i class="bi bi-arrow-clockwise"></i></button>
+            <div *ngFor = "let chat of messages"  >
+              <div [ngClass]="isSentMessage(chat.sender) ? 'label-faculty' : 'label-admin' " class="talk-bubble  border ">
+                  <label> {{chat.sender}} <br> {{chat.content}} <br> {{chat.timestamp | date: 'hh:mm dd-MM-yyyy' }}</label>
+              </div>
+            </div>  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>
+     
+

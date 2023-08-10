@@ -1,0 +1,181 @@
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-left: 38%;
+    
+  }
+  
+  .search-bar input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 35%;
+    box-shadow: none;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .search-bar input:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  /* Reset default margin and padding */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .list-group-item {
+    background-color: rgba(111, 184, 171, 0.39);
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 20px;
+    transition: background-color 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .list-group-item:hover {
+    background-color: rgba(169, 160, 110, 0.8);
+  }
+  
+  .list-group-item a {
+    text-decoration: none;
+  }
+  
+  .list-group-item-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .card-text {
+    font-size: 3rem;
+  }
+  
+  
+  .fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  } */
+  /* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .list-group-item {
+    background-color: rgba(202, 195, 156, 0.39);
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transform-origin: center bottom;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .list-group-item:hover {
+    background-color: rgba(202, 195, 156, 0.8);
+    transform: scale(1.05);
+  }
+  
+  .list-group-item a {
+    text-decoration: none;
+  }
+  
+  .list-group-item-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+  }
+  
+  /* Animation */
+  .fade-in-up {
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .spin {
+    animation: spin 2s infinite;
+    transform-origin: center center;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

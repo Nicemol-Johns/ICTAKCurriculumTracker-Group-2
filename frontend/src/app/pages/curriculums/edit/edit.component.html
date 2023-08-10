@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="page">
+        <form>
+            <div class="mb-3">
+              <label class="form-label">Name of Requirement</label>
+              <input type="text" class="form-control"  value="{{curriculum.name}}"  name="name" [(ngModel)]="curriculum.name"
+              #name="ngModel">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Area of Training</label>
+              <input type="text" class="form-control"  value="{{curriculum.area}}"  name="area" [(ngModel)]="curriculum.area"
+              #area="ngModel">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Reference Links: <a href="{{curriculum.referenceLink}}"><i class="bi bi-link-45deg"></i></a></label>
+              <a [href]="curriculum.referenceLink" target="_blank" style="cursor: pointer; text-decoration: none;">
+                <input type="text" class="form-control" [value]="curriculum.referenceLink" style="cursor: pointer;"  name="reference" [(ngModel)]="curriculum.referenceLink"
+                #area="ngModel">
+              </a>
+            </div>
+            <button class="btn btn-primary" (click)="update()">Update</button>
+          </form>
+    </div>   
+</div>
+
+
+
+<router-outlet></router-outlet>

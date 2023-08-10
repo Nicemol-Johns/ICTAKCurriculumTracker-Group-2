@@ -1,0 +1,24 @@
+
+<!-- <div class="pending-curriculums">
+    <h1 class="text-primary">Pending Approval Requests</h1> 
+    <br><br><br>
+    <ul class="curriculum-list">
+      <li *ngFor="let curriculum of pendingCurriculums" class="curriculum-item">
+        <a (click)="view(curriculum._id)" > {{ curriculum.name }} </a>
+      </li>
+    </ul>
+    </div> -->
+
+
+    <div class="pending-curriculums card">
+      <h1 class="card-title text-primary">Pending Approval Requests</h1>
+      <div class="card-body">
+        <ul class="curriculum-list">
+          <li *ngFor="let curriculum of pendingCurriculums" class="curriculum-item" (click)="view(curriculum._id)">
+            <a> {{ curriculum.name }} </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <router-outlet></router-outlet>

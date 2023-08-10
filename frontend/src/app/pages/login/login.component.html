@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+<div>
+
+  <div class="form ">
+    <div class="container-fluid col-lg-4 col-md">
+      <h2 class="text-primary text-center" >User Login</h2>
+      <br><br>
+      <form #loginForm="ngForm" (ngSubmit)="login()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email / Username</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email" [(ngModel)]="User.email" #email="ngModel"[class.is-invalid]="email.invalid&&email.touched" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+          <small class="text-danger" [class.d-none]="email.valid || email.untouched">Enter Valid email</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"name="password" [(ngModel)]="User.password" #password="ngModel" [class.is-invalid]="password.invalid&&password.touched" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+          <small class="text-danger" [class.d-none]="password.valid || password.untouched">Enter Valid Password</small>
+        </div>
+      
+        <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid" >Submit</button>&nbsp;&nbsp;
+        <br><br>
+        <a routerLink="/signup" class="create-account" >Create a New Account</a>
+        <!-- <div class="additional-options">
+          <a routerLink="/forgot-password" class="forgot-password">Forgot Password?</a>
+        </div> -->
+      
+      </form>
+
+    </div>
+    </div>
+    
+
+</div>
+<app-footer-short></app-footer-short>

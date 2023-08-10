@@ -1,0 +1,59 @@
+<div>
+
+    <div class="form">
+      <div class="container-fluid col-lg-6 col-md text-justify">
+        <br><br>
+        <form>
+          <div class="form-group">
+            <label for="requirement" class="text-lg-start">Requirement:</label>
+            <input type="text" class="form-control" id="requirement" required  disabled value="{{list.requirementName}}">
+          </div>       
+          <div class="form-group">
+            <label for="trainingArea" class="text-lg-start">Area of Training:</label>
+            <input type="text" class="form-control" id="trainingArea" required  disabled value="{{list.trainingArea}}">
+          </div>       
+          <div class="form-group">
+            <label for="institutename" class="text-lg-start">Institution/Corporate office</label>
+            <input type="text" class="form-control" id="institutename" required  disabled value="{{list.institution}}">
+          </div>       
+          <div class="form-group">
+            <label for="category" class="text-lg-start">Category:</label>
+            <input type="text" class="form-control" id="category" required  disabled value="{{list.category}}">
+          </div>       
+          <div class="form-group">
+            <label for="hours" class="text-lg-start">Training Hours</label>
+            <input type="text" class="form-control" id="hours" required  disabled value="{{list.trainingHours}}">
+          </div>       
+          <div class="form-group">
+            <label for="">Click here to view the references:</label><br>
+            <button class="btn btn-outline-primary" [disabled]="!isReferenceLinkAvailable" data-bs-toggle="modal" data-bs-target="#reg-modal">References</button>
+            
+                
+                <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title"  aria-hidded="true">
+                    <div class="modal-dialog modal-dialog-scrollable">
+                      <div class="modal-content">
+                        
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">References</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+    
+                          <div class="modal-body">
+                            <iframe [src]="formURL(list.referenceLinkID)" width="100%" height="600px" style="border:0;"></iframe>
+                          </div>
+                      </div>
+                   </div>
+                </div>
+          </div>       
+        </form>
+        
+        <div class="d-flex justify-content-end">
+            <a routerLink="/faculty-dashboard/curriculum-create/details"  ><i class="bi bi-arrow-right-square-fill" style="font-size: 2rem; color: cornflowerblue;"></i></a>
+        </div>
+
+      </div>
+      </div>
+      
+  
+  </div>
+

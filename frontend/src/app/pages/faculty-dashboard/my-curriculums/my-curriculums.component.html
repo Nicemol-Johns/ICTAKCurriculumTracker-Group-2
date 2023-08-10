@@ -1,0 +1,20 @@
+
+<h3 class="text-primary mt-5 ">My Curriculums</h3>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-11 justify-content-center m-5">
+        <div class="list-group" *ngFor="let form of curriculums">
+          <div class="list-group-item fade-in-up">
+            <a (click)="view(form._id)" class="list-group-item-action d-flex justify-content-between" style="cursor:pointer;background-color: rgba(202, 195, 156, 0.39);">
+              {{form.requirementName}} - {{form.name}}
+              <div class="btn-group mr-2" role="group">
+                <!-- Your buttons here -->
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  
