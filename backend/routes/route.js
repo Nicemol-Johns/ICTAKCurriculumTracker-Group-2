@@ -40,30 +40,31 @@ router.post("/user-signup",async (req,res)=>{
 })
 
 router.post('/login', (req, res) => {
-    const { email, password } = req.body;
-    console.log(email,password)
-    if(email==="admin@org.in" && password==="admin123"){
-      const token = jwt.sign({email},secretKey);
-      res.status(200).json({ token, role:'admin', message: 'Admin Login successful',api:'/dashboard'});
-    }else{
-      usersSignupLoginData.findOne({ email, password })
-      .then(user => {
-        if (user) {
-          const name = user.name;
-          const token =jwt.sign({email:user.email}, secretKey)
-          res.status(200).json({token, role:'user', message: 'Login successful',api:'/faculty-dashboard',user:name});
-        } else {
-          res.status(401).json({ error: 'Invalid username or password' });
-        }
-      })
-      .catch(error => {
-        res.status(500).json({ error: error.message });
-      });
+  const { email, password } = req.body;
+  console.log(email,password)
+  if(email==="admin@org.in" && password==="admin123"){
+    const data = {email:email,role:"admin"}
+    const token = jwt.sign({data},secretKey);
+    res.status(200).json({ token, role:'admin', message: 'Admin Login successful',api:'/dashboard'});
+  }else{
+    usersSignupLoginData.findOne({ email, password })
+    .then(user => {
+      if (user) {
+        const name = user.name;
+        const token =jwt.sign({email:user.email}, secretKey)
+        res.status(200).json({token, role:'user', message: 'Login successful',api:'/faculty-dashboard',user:name});
+      } else {
+        res.status(401).json({ error: 'Invalid username or password' });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({ error: error.message });
+    });
 
-    }
-  
+  }
 
-  });
+
+});
 
   
   router.get('/fetchCurriculums',async(req,res)=>{

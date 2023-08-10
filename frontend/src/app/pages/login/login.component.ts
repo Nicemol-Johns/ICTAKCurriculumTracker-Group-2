@@ -20,8 +20,8 @@ login(){
   this.authserve.login(this.User.email,this.User.password).subscribe(response =>{
     console.log('login successful',response);
     this.chats.setUser(response.user);
-    this.router.navigate([response.api]);
     Swal.fire('Success!', 'You have successfully logged in.', 'success');
+    this.router.navigate([response.api]);
   },
   (error) => {
     console.log('login failed', error);
