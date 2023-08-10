@@ -35,7 +35,7 @@
 .talk-bubble {
   display: inline-block;
   position: relative;
-	width: 200px;
+	width: 80%;
 	height: auto;
 	/* background-color: lightyellow; */
 }
