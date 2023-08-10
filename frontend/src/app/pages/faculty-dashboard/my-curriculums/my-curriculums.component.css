@@ -1,85 +1,86 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:  sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.list-group-item {
+  background-color: rgba(0, 119, 255);
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transform-origin: center bottom;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.list-group-item:hover {
+  border: 1px solid rgb(166, 193, 197);
+  background-color: rgba(202, 195, 156, 0.8);
+  transform: scale(1.05);
+}
+
+.list-group-item a {
+  text-decoration: none;
+}
+
+.list-group-item-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card-text {
+  font-size: 1rem;
+}
+
+/* Animation */
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 20px;
+}
+
+.spin {
+  animation: spin 2s infinite;
+  transform-origin: center center;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(90deg);
   }
-  
-  .list-group-item {
-    background-color: rgba(202, 195, 156, 0.39);
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    transform-origin: center bottom;
-    overflow: hidden;
-    position: relative;
+  100% {
+    transform: rotate(360deg);
   }
-  
-  .list-group-item:hover {
-    background-color: rgba(202, 195, 156, 0.8);
-    transform: scale(1.05);
-  }
-  
-  .list-group-item a {
-    text-decoration: none;
-  }
-  
-  .list-group-item-action {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-  }
-  
-  .card-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .card-text {
-    font-size: 1rem;
-  }
-  
-  /* Animation */
-  .fade-in-up {
-    animation: fadeInUp 0.5s ease-out;
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .spin {
-    animation: spin 2s infinite;
-    transform-origin: center center;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(90deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
+}

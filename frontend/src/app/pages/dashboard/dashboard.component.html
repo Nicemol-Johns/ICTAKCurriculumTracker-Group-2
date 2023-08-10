@@ -5,13 +5,14 @@
       <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
           <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
               <div class="d-flex  pb-3 mb-md-0 me-md-auto text-white text-decoration-none ">
-                  <div class="flex-row bg-primary" style="border-radius:10px;padding:2px">
+                  <div class="flex-row">
                       <a href="#" class="nav-link">
-                          <i class="bi bi-house" style="font-size:1rem;color:white"></i>
+                          <!-- <i class="bi bi-house" style="font-size:1rem;color:white"></i> -->
+                          <h3><i class="fa fa-book-reader  mt- mr-3 style=font-size:1rem; color:white"></i>ICTAK</h3>
                       </a>                           
                   </div>
               </div>
-              <div class="row">
+              <div class="row py-3">
                   <a routerLink="/dashboard" style="text-decoration:none">
                       <span class="fs-6 font-weight-semi-bold d-sm-inline">
                           <span id="facultyName">ADMIN</span> <!--Name of the user-->
@@ -24,7 +25,7 @@
                         <button style="background-color: transparent;border:none;padding:2px">
                             <i class='bi bi-ui-checks' style="font-size:1.3rem;color:white"></i>
                         </button>
-                         <span class="ms-1 d-none d-sm-inline">&nbsp;Requirement Form</span>
+                         <span id="reqform" class="ms-1 d-none d-sm-inline">&nbsp;Requirement Form</span>
                       </a>
                   </li>
                   <li>
@@ -62,7 +63,7 @@
           </div>
           
       </div>
-      <div class="col py-3 text-center bg-tertiary">
+      <div class="col py-3 text-center">
           <router-outlet></router-outlet>
       </div>
   </div>

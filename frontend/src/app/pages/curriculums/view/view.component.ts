@@ -172,6 +172,7 @@ export class ViewComponent implements OnInit {
         }
       )
     }
+    
 
     formURL(referenceLinkID: string): SafeResourceUrl {
       console.log(referenceLinkID)

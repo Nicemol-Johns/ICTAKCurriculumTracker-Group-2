@@ -1,3 +1,4 @@
+<div class="background">
 <div class="top">
 <div class="search-bar">
   <input type="text" [(ngModel)]="searchText" placeholder="Search ">
@@ -5,14 +6,14 @@
 
   
   <div class="d-flex justify-content-end">
-    <button class="create-employee-button" routerLink="/dashboard/requirement-list/rform">Create Form</button>
+    <!-- <button class="create-employee-button" routerLink="/dashboard/requirement-list/rform">Create Form</button> -->
   </div>
 </div>
   <div class="container mt-5 px-2">
     <div class="row">
      <div class="col-3" *ngFor="let form of list | search: searchText ">
  
-         <div class="card mb-4" style="width: 18rem;">
+         <div class="card mb-4" style="width: 18rem; height: 13rem;">
              <div class="card-body">
                <h5 class="card-title text-center">Requirement: {{form.requirementName}}</h5>
                <h6 class="card-text">Training Area: {{form.trainingArea}}</h6>
@@ -25,14 +26,22 @@
              
              </div>
            </div>
- 
      </div>
+     <div class="col-3">
+      <div class="card mb-4 pt-4" style="width: 18rem; height: 13rem;">
+        <div class="card-body">
+          <button class="btn"><i class="fa fa-plus" routerLink="/dashboard/requirement-list/rform"></i></button>
+        <h6>Create Form </h6> 
+        
+        </div>
+      </div>
+      </div>
  
     </div>
  
  </div>
- 
+</div>
 
  
-
+<!-- <app-footer-short></app-footer-short> -->
  <router-outlet></router-outlet>
