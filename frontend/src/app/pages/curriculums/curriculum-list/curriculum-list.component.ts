@@ -30,10 +30,13 @@ export class CurriculumListComponent implements OnInit{
   // }
 
   delete(id:any){
-    this.getCurriculum.deleteCurriculum(id).subscribe((res:any)=>{console.log('Success')})
-    this.getCurriculum.fetchCurriculums().subscribe((res:any)=>{
-    this.curriculums = res.data
+    this.getCurriculum.deleteCurriculum(id).subscribe((res:any)=>{
+      console.log('Success')
+      this.getCurriculum.fetchCurriculums().subscribe((res:any)=>{
+        this.curriculums = res.data
+      })
   })
+
 
 }
 }

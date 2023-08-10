@@ -16,3 +16,7 @@ h3{
 .fa-book-reader{
     color: white;
 }
+.signout{
+    position:fixed;
+    bottom:70px;
+}

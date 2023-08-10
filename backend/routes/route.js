@@ -204,7 +204,7 @@ router.post('/login', (req, res) => {
         let id = req.params.id;
         console.log(id);  
         let data = await curriculumSavedSchema.findByIdAndRemove(id);
-        // res.set('Cache-Control', 'no-store');      
+        res.set('Cache-Control', 'no-store');      
         res.json({data:data,status:200}).status(201);
     } catch (error) {
         res.status(400).json({ message: "DELETE request CANNOT be completed" });       
