@@ -2,9 +2,9 @@
   <button class="btn" ><i class="bi bi-arrow-left-circle" style="font-size: 2rem; color: cornflowerblue;" routerLink="/dashboard/requirement-list"></i> </button>
 </div>
 
-<h2 class="text-primary mt-2">Add Requirements of Curriculum</h2>
+<h2 class="text-primary mt-1">Add Requirements of Curriculum</h2>
 <br>
-<form [formGroup]="Rform" (ngSubmit)="onSubmit()">
+<form [formGroup]="Rform" (ngSubmit)="onSubmit()" class="mb-2">
   <div>
     <label for="requirementName">Name of Requirement:</label>
     <input type="text" id="requirementName" name="requirementName" formControlName="requirementName">

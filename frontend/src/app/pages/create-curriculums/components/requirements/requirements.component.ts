@@ -20,7 +20,6 @@ export class RequirementsComponent implements OnInit {
     referenceLink:'',
     referenceLinkID:''
   }
-  isReferenceLinkAvailable = false;
 
   constructor(private fetch:FetchRequirementsFacultyDashboardService,
     private sanitizer: DomSanitizer){}
@@ -28,7 +27,6 @@ export class RequirementsComponent implements OnInit {
   ngOnInit(): void {
     this.list = this.fetch.getRequirements();
     console.log(this.list.referenceLinkID)
-    this.isReferenceLinkAvailable = !!this.list.referenceLinkID;
   }
 
     formURL(referenceLinkID: string): SafeResourceUrl {
