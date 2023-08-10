@@ -51,7 +51,8 @@ router.post('/login', (req, res) => {
     .then(user => {
       if (user) {
         const name = user.name;
-        const token =jwt.sign({email:user.email}, secretKey)
+        const data = {email:email,role:"user"}
+        const token =jwt.sign({data}, secretKey)
         res.status(200).json({token, role:'user', message: 'Login successful',api:'/faculty-dashboard',user:name});
       } else {
         res.status(401).json({ error: 'Invalid username or password' });
