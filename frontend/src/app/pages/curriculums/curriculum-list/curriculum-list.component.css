@@ -62,6 +62,13 @@ body {
 .btn-group{
   margin-left: 950px;
 }
+.icons{
+  padding:2px;
+  color:aliceblue;
+}
+.icons:hover{
+  color:red;
+}
 
 @keyframes fadeInUp {
   from {

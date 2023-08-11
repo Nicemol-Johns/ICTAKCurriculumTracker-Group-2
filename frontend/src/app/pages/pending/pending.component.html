@@ -17,7 +17,7 @@
   <div class="card-body">
     <ul class="curriculum-list">
       <li *ngFor="let curriculum of pendingCurriculums" class="curriculum-item card" (click)="view(curriculum._id, curriculum.name)">
-        <a (click)="view(curriculum._id, curriculum.name)"> {{ curriculum.name }} </a>
+        <a (click)="view(curriculum._id, curriculum.name)" class="text-start text-decoration-none"> {{curriculum.requirementName}}/ {{curriculum.trainingArea}} {{ curriculum.name }}</a>
       </li>
     </ul>
   </div>
