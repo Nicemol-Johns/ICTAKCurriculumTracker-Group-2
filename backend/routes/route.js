@@ -6,6 +6,7 @@ const secretKey = 'ICTAK';
 router.use(express.json());
 router.use(express.urlencoded({extended:true}));
 
+const os = require('os');
 const {google} = require('googleapis')
 const multer = require('multer')
 const fs = require('fs')
@@ -13,7 +14,7 @@ const path = require('path')
 const keyFileContents = fs.readFileSync('ictak03-73387119ae0d.json');
 const credentials = JSON.parse(keyFileContents);
 const storage=multer.diskStorage({
-    destination:"uploads",
+    destination:os.tmpdir(),
     filename:function(req,file,callback){
         const extension = file.originalname.split('.').pop()
         callback(null, `${file.fieldname}-${Date.now()}.${extension}`)
