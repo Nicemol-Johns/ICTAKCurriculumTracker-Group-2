@@ -9798,7 +9798,7 @@ h6,
 }
 
 .jumbotron {
-  background: linear-gradient(rgba(40, 120, 235, 0.9), rgba(40, 120, 235, 0.9)), url(../src/assets/person-front-computer-working-html.jpg), no-repeat center center;
+  background: linear-gradient(rgba(40, 120, 235, 0.9), rgba(40, 120, 235, 0.9)), url(/assets/person-front-computer-working-html.jpg), no-repeat center center;
   background-size: cover;
 }
 
