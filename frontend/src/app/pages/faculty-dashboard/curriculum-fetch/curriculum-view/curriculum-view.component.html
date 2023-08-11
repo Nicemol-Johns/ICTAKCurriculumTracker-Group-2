@@ -104,8 +104,9 @@
             </form>
             <button style="background-color: transparent;border:none;" (click)="reload()"><i class="bi bi-arrow-clockwise"></i></button>
             <div *ngFor = "let chat of messages"  >
+              <p class="fs-6" class="timestamp">{{chat.timestamp | date: 'hh:mm dd-MM-yyyy' }}</p>
               <div [ngClass]="isSentMessage(chat.sender) ? 'label-faculty' : 'label-admin' " class="talk-bubble  border ">
-                  <label> {{chat.sender}} <br> {{chat.content}} <br> {{chat.timestamp | date: 'hh:mm dd-MM-yyyy' }}</label>
+                  <label> {{chat.sender}} <br> {{chat.content}}</label>
               </div>
             </div>  
           </div>
