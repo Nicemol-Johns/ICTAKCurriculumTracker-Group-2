@@ -72,7 +72,7 @@
 .talk-bubble {
   display: inline-block;
   position: relative;
-	width: 90%;
+	width: 200px;
 	height: auto;
 	/* background-color: lightyellow; */
 }
@@ -80,11 +80,6 @@
   border: 8px solid #666;
 }
 
-@keyframes spin {
-  0% { transform: rotate(0); }
-  100% { transform: rotate(360deg); }
-}
-
-.spin-on-click {
-  animation: spin 1s linear; 
+#background{
+    background-image: url(../../../assets/pexels-mubaz-basheer-916017.jpg);
 }

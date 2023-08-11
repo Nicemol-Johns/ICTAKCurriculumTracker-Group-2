@@ -36,7 +36,7 @@ export class CurriculumViewComponent {
   adminMessages:any[] = [];
 
   isReferenceLinkAvailable = false;
-  isReloadClicked=false;
+  
   data = {
     id:'',
     s_no: '',
@@ -145,13 +145,8 @@ export class CurriculumViewComponent {
 
 
 reload(){
-  this.isReloadClicked=true
-  this.ngOnInit();
-  setTimeout(() => {
-    this.isReloadClicked = false;
-}, 1000);
+  this.ngOnInit()
 }
-
 
 onToggleButtonClick(){
   console.log('hello');

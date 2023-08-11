@@ -38,7 +38,7 @@
             <form id="form" #ChatForm="ngForm" (ngSubmit)="onSubmit()">
               <input id="input" name="message" [(ngModel)]="message" ><button type="submit">Send</button>
             </form>
-            <button style="background-color: transparent;border:none;" [ngClass]="{'spin-on-click': isReloadClicked}" (click)="reload()"><i class="bi bi-arrow-clockwise"></i></button>
+            <button style="background-color: transparent;border:none;" (click)="reload()"><i class="bi bi-arrow-clockwise"></i></button>
             <div *ngFor = "let chat of messages"  >
               <p class="fs-6" class="timestamp">{{chat.timestamp | date: 'hh:mm dd-MM-yyyy' }}</p>
               <div [ngClass]="isSentMessage(chat.sender) ? 'label-faculty' : 'label-admin' " class="talk-bubble  border ">
