@@ -63,6 +63,10 @@ body {
   color: #6B6A75;
   text-align: left;
   background-color: #FFFFFF;
+  background-image: url('/assets/3433798.jpg');
+  background-size: cover;
+  background-position: center;
+  
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
