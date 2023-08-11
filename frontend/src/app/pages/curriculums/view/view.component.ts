@@ -25,6 +25,7 @@ export class ViewComponent implements OnInit {
     private chats_backup:ChatsBackendServicesService,
     private sanitizer: DomSanitizer){}
 
+  isReloadClicked=false;
   isEditing = false;
   changeText=false;
   message = '';
@@ -157,7 +158,11 @@ export class ViewComponent implements OnInit {
   }
 
   reload(){
+    this.isReloadClicked=true
     this.ngOnInit();
+    setTimeout(() => {
+      this.isReloadClicked = false;
+  }, 1000);
   }
   
     approve(){

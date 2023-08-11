@@ -70,12 +70,20 @@
 .talk-bubble {
   display: inline-block;
   position: relative;
-	width: 80%;
+	width: 90%;
 	height: auto;
 	/* background-color: lightyellow; */
 }
 .border{
   border: 8px solid #666;
+}
+@keyframes spin {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+
+.spin-on-click {
+  animation: spin 1s linear; 
 }
 
 .approve{

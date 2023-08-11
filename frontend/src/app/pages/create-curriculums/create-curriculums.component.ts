@@ -21,6 +21,7 @@ export class CreateCurriculumsComponent implements OnInit{
     private http:HttpClient,
     private datePipe: DatePipe){}
 
+  isReloadClicked=false;
   reqname = '';
   username_chat = '';
   message = '';
@@ -51,11 +52,14 @@ export class CreateCurriculumsComponent implements OnInit{
      // console.log(this.facultymessages);
      // console.log(this.adminMessages)
   
-
   }
 
   reload(){
-    this.ngOnInit()
+    this.isReloadClicked=true
+    this.ngOnInit();
+    setTimeout(() => {
+      this.isReloadClicked = false;
+  }, 1000);
   }
 
   onToggleButtonClick(){
