@@ -5,6 +5,7 @@ import { ChatServiceService } from 'src/app/chat-service.service';
 import { CurriculumQueriesService } from 'src/app/curriculum-queries.service';
 import { FetchRequirementsFacultyDashboardService } from 'src/app/fetch-requirements-faculty-dashboard.service';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-details',
@@ -92,8 +93,10 @@ export class DetailsComponent {
             //console.log(res.data.referenceLinkId);
             this.curriculum.referenceLinkID = res.data.referenceLinkID
             console.log('success');
-            alert('Added successfully')
-            this.router.navigate(['/faculty-dashboard/Rformfaculty'])
+            if(res.status==200){
+              alert('Added successfully');
+              this.router.navigate(['/faculty-dashboard/Rformfaculty'])
+            }
             this.enableSubmit = false;
           }
         );

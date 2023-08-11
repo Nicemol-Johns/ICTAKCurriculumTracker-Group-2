@@ -17,7 +17,7 @@
           <div class="form-group">
             <label for="description">Description</label>
             <!-- <input type="text" class="form-control" id="decription"  required> -->
-            <textarea class="form-control" id="description" rows="8" name="description" [(ngModel)]="curriculum.description"></textarea>
+            <textarea class="form-control" id="description" required rows="8" name="description" [(ngModel)]="curriculum.description"></textarea>
           </div>
 
             <div class="input-group mb-3">
@@ -26,7 +26,7 @@
             </div>
 
             <div class="d-flex justify-content-end">
-              <button type="submit" class="btn btn-primary" >Submit</button> 
+              <button type="submit" class="btn btn-primary" [disabled]="curriculumForm.invalid" >Submit</button> 
             </div>
         
         </form>

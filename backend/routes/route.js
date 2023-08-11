@@ -166,7 +166,7 @@ router.post('/login', (req, res) => {
         console.log(newCurriculum)
         const createdCurriculum = await curriculumSavedSchema(newCurriculum);
         createdCurriculum.save();   
-        res.status(201).json({ data: createdCurriculum, message: 'Curriculum created successfully' });
+        res.json({ data: createdCurriculum, message: 'Curriculum created successfully',status:200});
       } catch (error) {
         res.status(500).json({ error: 'Failed to create curriculum' });
       }
