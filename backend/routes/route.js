@@ -193,7 +193,7 @@ router.post('/login', (req, res) => {
           const updated = await curriculumSavedSchema.findByIdAndUpdate(id,updateData);  
           console.log(updated)
           res.set('Cache-Control', 'no-store');                            
-          res.status(200).json("UPDATE Successful");                                                                          
+          res.json({message:"UPDATE Successful",status:200});                                                                          
       }catch(error){
           res.status(400).json("Cannot /UPDATE data");                            
           console.log(`Cannot POST data`);                               
