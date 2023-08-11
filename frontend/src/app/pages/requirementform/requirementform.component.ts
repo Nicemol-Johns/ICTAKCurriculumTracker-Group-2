@@ -58,6 +58,7 @@ export class RequirementformComponent implements OnInit {
     this.api.addRequirement(formData).subscribe(
       (data) => {
         console.log('Requirement added successfully:', data);
+        alert('Requirement added successfully')
         this.router.navigate(['/dashboard/requirement-list']);
       }
     );
