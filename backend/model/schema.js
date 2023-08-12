@@ -180,36 +180,24 @@ const chatAdminSchema=mongoose.Schema({
     }
 });
 
-//Find the collections with the facultyname from the admin database to get the messages from the admin to the faculty
+//Find the collections with the facultyname from the chats database to get the messages from the faculty to the admin
 async function findCollectionWithFacultyNameChatDB(facultyName,requirementName) {
     try {
         console.log(facultyName)
-      const collections = await chats.db.listCollections().toArray();
-      console.log("Collections",collections)
-    //   const matchingCollection = collections.find((collection) => collection.name === facultyName);
-    //   console.log("matching Collection",matchingCollection)
-      const facultyChatModel = chats.model(facultyName.name, chatAdminSchema,facultyName);       
+      const facultyChatModel = chats.model(facultyName, chatUsersSchema,facultyName);       
       const messages = await facultyChatModel.find({requirementName:requirementName});
-      //console.log("Messages",Messages)
-      console.log(messages)
       return messages;
     } catch (error) {
       console.error('Error while searching for collection:', error);
       return [];
     }
   }
+  //Find the collections with the facultyname from the adminchats database to get the messages from the admin to the faculty
 async function findCollectionWithFacultyNameAdminDB(facultyName,requirementName) {
     try {
         console.log(facultyName)
-      const collections = await admin.db.listCollections().toArray();
-      console.log(collections)
-    //   const matchingCollection = collections.find((collection) => collection.name === facultyName);
-    //   console.log(matchingCollection)
-      const adminChatModel = admin.model(facultyName.name, chatAdminSchema,facultyName);       
+      const adminChatModel = admin.model(facultyName, chatAdminSchema,facultyName);       
       const messages = await adminChatModel.find({requirementName:requirementName});
-      //const Messages = [...messages]
-      //console.log("Messages",Messages)
-      //console.log(Messages)
       return messages;
     } catch (error) {
       console.error('Error while searching for collection:', error);
