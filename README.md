@@ -1,4 +1,4 @@
-# ICTAKCurriculumTracker-Group-2
+# ICTAKCurriculumTracker-Group-2  : Ananthan S, Ashik Mohan, Lekha Sivadas, Nicemol Johns
 
 This is the final version of Project.
 
