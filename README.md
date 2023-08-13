@@ -10,3 +10,7 @@ Version 2 - https://github.com/Nicemol-Johns/ICTAK-Curriculum-Tracker-Group-Proj
 Hosted Link - https://jade-odd-cape-buffalo.cyclic.app
 
 Repo used for Hosting - https://github.com/FSD-Project-2/ICTAK-Curriculum-Tracker-Hosting.git
+
+ADMIN CREDENTIALS:
+Email: admin@org.in
+Password: admin123
